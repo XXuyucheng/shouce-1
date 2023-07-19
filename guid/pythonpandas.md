@@ -78,3 +78,48 @@ df = df.set_index('团队编号')
 ```py
 
 ```
+
+### 创建数据
+
+#### 创建序列
+
+1. 创建序列series
+
+```s1 = pd.Series(d)```
+
+```py
+d = {'x':1,'y':2,'z':3}#字典
+s1 = pd.Series(d)
+print(s1.index)
+```
+
+>这个序列会自动将py中的字典键值对的键作为index
+
+也可以直接设置一个series的index和value
+
+```py
+L1 = [1,2,3]
+L2 = ['a','s','d']
+s1 = pd.Series(L1,index=L2)
+```
+
+```s1 = pd.Series([1,2,3],index=['a','s','d'])```
+>直接生成
+>> 注意序列没有行列之分且每个序列都有一个title也就是```name```
+
+2. 将series放入dataframe中
+
+- 将序列做一个列放入行列dataframe中
+
+```py
+a1 = pd.Series([1,2,3],index=['1','2','3'],name='A')
+a2 = pd.Series([11,22,33],index=['1','2','3'],name='B')
+a3 = pd.Series([111,222,333],index=['2','3','4'],name='C')
+df = pd.DataFrame({a1.name:a1,a2.name:a2,a3.name:a3})
+```
+
+- 以list形式序列就会成为行加入
+```df = pd.DataFrame([a1,a2,a3])```
+
+> **有意思的时这里是将每个序列中index形同的对齐**
+> 如果没有对应值就会成为NaN
