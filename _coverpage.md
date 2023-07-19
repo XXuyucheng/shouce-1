@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-![logo](logo.jpeg)
+![logo](logo.jpg)
 
 # 阿煜的手册hihi <small>1.0版本</small>
 
@@ -11,4 +11,4 @@
 - ohohoh
 
 [GitHub](https://github.com/XXuyucheng)
-[Get Started](#趣加策划部工作手册)
+[Get Started](README)
