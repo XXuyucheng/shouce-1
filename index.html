@@ -22,7 +22,36 @@
       subMaxLevel: 2,
       loadNavbar: true,
       name: '策划手册',
-      coverpage: true
+      coverpage: true,
+      search: 'auto', // 默认值
+      search : [
+      '/',            // => /README.md
+      '/guide',       // => /guide.md
+      '/get-started', // => /get-started.md
+      '/zh-cn/',      // => /zh-cn/README.md
+    ],
+// 支持本地化
+placeholder: {
+  '/zh-cn/': '搜索',
+  '/': 'Type to search'
+},
+noData: 'No Results!',
+
+      // 支持本地化
+      noData: {
+        '/zh-cn/': '找不到结果',
+        '/': 'No Results'
+      },
+      // 搜索标题的最大层级, 1 - 6
+      depth: 2,
+
+      hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+
+      // 避免搜索索引冲突
+      // 同一域下的多个网站之间
+      namespace: 'website-1',
+      pathNamespaces: ['/zh-cn', '/ru-ru', '/ru-ru/v1'],
+      pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
     }
   </script>
   <!-- Docsify v4 -->
