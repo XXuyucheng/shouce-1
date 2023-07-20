@@ -23,12 +23,14 @@
       loadNavbar: true,
       name: '策划手册',
       coverpage: true,
-      search: 'auto', // 默认值
       search : [
+      'auto',
       '/',            // => /README.md
-      '/guide',       // => /guide.md
-      '/get-started', // => /get-started.md
-      '/zh-cn/',      // => /zh-cn/README.md
+      'guid/工作流程', 
+      'guid/工作规划', // => /get-started.md
+      'guid/公司',      // => /zh-cn/README.md
+      'guid/产品',
+      'guid/pythonpandas'
     ],
       placeholder: {
         '/zh-cn/': '搜索',
@@ -42,7 +44,7 @@
         '/': 'No Results'
       },
       // 搜索标题的最大层级, 1 - 6
-      depth: 2,
+      depth: 3,
 
       hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
 
