@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>影视.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E8%A7%86%E5%90%AC%E8%AF%AD%E8%A8%80%E8%87%AA%E5%AD%A6">视听语言自学</h1>
+<blockquote>
+<p>概念、作用、意义之间没有严格的区分。以下以次做出的区别全是方便行事而已。概念的诞生本身就是为了表达一个意义，意义的落实也是作用所在。
+对一个知识的概念应当求高度完整的概括。意义是在作用之上总结，而作用应力求完整。</p>
+</blockquote>
+<h2 id="%E5%BD%B1%E5%83%8F%E6%9E%84%E6%88%90">影像构成</h2>
+<p>影像的构成细分为7个部分，主体、陪体、前景、背景、影调、线条、色彩。</p>
+<h3 id="%E4%B8%BB%E4%BD%93%E4%B8%8E%E4%B8%BB%E4%BD%93%E7%9A%84%E7%AA%81%E5%87%BA">主体与主体的突出</h3>
+<p>从概念上来说，我们认为主体是一个画面内容的主要体现，同时主体也是这个画面的结构中心，但是在我们对它进行约束的时候，我们会说主体并不需要出现在画面的中心位置，它可以出现在画面的任何一个地方，但是<strong>重点就是要强调要突出。</strong></p>
+<ul>
+<li>虚实法</li>
+<li>线引导法</li>
+<li>黄金分割点(包括九宫格交点)</li>
+<li>明暗法</li>
+<li>线条对比法</li>
+</ul>
+<h3 id="%E8%83%8C%E6%99%AF">背景</h3>
+<blockquote>
+<p>概念：所谓背景是指的处在画面主体背后的景物，我们称之为背景，那么背景其实也被称之为后景，因为它对应的叫前景，处在画面主体身后的这些景物，我们就称之为背景。</p>
+<blockquote>
+<p>在画面的构成中，画面的培体和前景都是可以增加或删除的部分。但是画面的主体和背景都是画面必须存在的部分</p>
+</blockquote>
+</blockquote>
+<h4 id="%E4%B8%BA%E4%B8%BB%E4%BD%93%E6%9C%8D%E5%8A%A1">为主体服务</h4>
+<p>能够让背景充分的为主体服务，这是我们看到作为背景其信息功能与主体之间关系的一个有效搭配。</p>
+<ul>
+<li>交代主体所在的环境</li>
+<li>交代主体的身份特征</li>
+<li>表达主体的情绪或者是情境</li>
+</ul>
+<blockquote>
+<p>背景选择tips</p>
+<blockquote>
+<ol>
+<li>选择那些与主体有着紧密关系的环境特征，对主体人物形象塑造</li>
+<li>背景本身不能够干扰到主体的形象</li>
+<li>让整个画面的层次变得更加丰富</li>
+</ol>
+</blockquote>
+</blockquote>
+<h4 id="%E8%83%8C%E6%99%AF%E7%9A%84%E5%BD%A2%E5%BC%8F%E7%BE%8E">背景的形式美</h4>
+<ul>
+<li>形式与意境</li>
+<li>空间的纵深感</li>
+</ul>
+<h3 id="%E9%99%AA%E4%BD%93">陪体</h3>
+<blockquote>
+<p>对于画面内容的一个有意思的补充，是画面中除了主体外另一个重要的对象。</p>
+</blockquote>
+<h4 id="%E5%86%85%E5%AE%B9%E4%B8%8A%E7%9A%84%E4%BD%9C%E7%94%A8">内容上的作用</h4>
+<ul>
+<li>帮助主体解释主题，实现单镜头叙事(与主体之间有紧密的关联或者呼应)</li>
+</ul>
+<blockquote>
+<p>这种主配之间打关系有着严格的对应（主配之间的关系直接影响了画面所要表达的内容）</p>
+</blockquote>
+<ul>
+<li>纯粹气氛渲染，带入到一个情景中</li>
+</ul>
+<h4 id="%E7%94%BB%E9%9D%A2%E4%B8%8A%E7%9A%84%E4%BD%9C%E7%94%A8">画面上的作用</h4>
+<ul>
+<li>实现画面的一种均衡，或者产生画面的空间感，对象感</li>
+</ul>
+<blockquote>
+<p>这里关于内容画面的区分只是为了知识梳理的方便，实际上内容与画面的形式之间互相交融，形式美本身也是内容。
+这与主体和陪体的区分一样，主体和陪体看似区分实际上在表达一个主题时，二者是不可分割的整体。只有二者的联合才能表达应有的意义来。甚至整个画面也是一个整体，在分与合之间是一条通往体验的完整通路。
+我们的意向在此间流动，真实的画面永远都是一个整体，但是只有完成一次分合，我们的意向才有在画面与整体之间流动的道路。意义也在此间诞生。</p>
+</blockquote>
+<h3 id="%E5%89%8D%E6%99%AF">前景</h3>
+<blockquote>
+<p>前景是镜头前面最靠近镜头的那些景物，也就是说是冲击在画面靠近镜头的那些景物。
+没有一个约束它所存在的位置，也没有约束它的形态。</p>
+<blockquote>
+<p>它可以出现在4边，也可以出现在4角，它既可以是虚像，也可以是虚像，它既可以是一个框架结构，也可以弥漫在画面的所有的位置。</p>
+</blockquote>
+<p><strong>约束是它的功能。</strong></p>
+</blockquote>
+<h4 id="%E8%A7%86%E8%A7%89%E5%86%B2%E5%87%BB">视觉冲击</h4>
+<p>近大远小的视觉夸张</p>
+<h4 id="%E6%A1%86%E6%9E%B6%E8%A3%85%E9%A5%B0">框架装饰</h4>
+<ul>
+<li>装饰画面</li>
+<li>对画面重新构图</li>
+</ul>
+<h4 id="%E8%A7%86%E8%A7%89%E5%BC%95%E5%AF%BC">视觉引导</h4>
+<h4 id="%E4%BF%A1%E6%81%AF%E8%A1%A5%E5%85%85">信息补充</h4>
+<p>对内容的有效补充</p>
+<h4 id="%E9%81%AE%E6%8C%A1%E4%BD%9C%E7%94%A8">遮挡作用</h4>
+<ul>
+<li>遮挡干扰次要信息</li>
+<li>简化构图</li>
+<li>压低画面层次，调整影调</li>
+</ul>
+<h3 id="%E8%89%B2%E8%B0%83">色调</h3>
+<blockquote>
+<p>是画面的色彩基调，而不是某一个色块</p>
+</blockquote>
+<h4 id="%E5%AF%B9%E6%83%85%E7%BB%AA%E7%9A%84%E9%9A%90%E5%96%BB%E5%BC%95%E5%AF%BC">对情绪的隐喻引导</h4>
+<ul>
+<li>在潜移默化中影响观众的情绪</li>
+<li>是主题表达重要推手</li>
+</ul>
+<blockquote>
+<p>当色彩与画面内容结合之后就会带来情绪上的引导</p>
+<blockquote>
+<p>（重要的是内容与彩色结合，单独的颜色没有特别意义）</p>
+</blockquote>
+<p>没有颜色的色调成为消色（黑白）
+色调的饱和度带来的对比</p>
+</blockquote>
+<h4 id="%E7%94%BB%E9%9D%A2%E7%A9%BA%E9%97%B4%E7%9A%84%E6%9C%89%E6%95%88%E8%B0%83%E5%BA%A6">画面空间的有效调度</h4>
+<ul>
+<li>色调与色块的对比</li>
+</ul>
+<blockquote>
+<p>在统一的色调中出现一个特别的颜色色块时可以表很多内容</p>
+</blockquote>
+<ul>
+<li>冷暖色调之间的协调</li>
+</ul>
+<h3 id="%E7%BA%BF%E6%9D%A1">线条</h3>
+<blockquote>
+<p>画面钩虫中形式的重要体现，对形式美的表达</p>
+<ul>
+<li>
+<p>线条的形式并不重要重要的时<strong>从现实中抽离出线条感</strong></p>
+</li>
+<li>
+<p>对画面表达时要有线条的谋略</p>
+</li>
+</ul>
+<blockquote>
+<p>线条可以是直线曲线划分也可以用字母划分但这并不重要</p>
+</blockquote>
+</blockquote>
+<h4 id="%E8%BE%90%E5%B0%84%E5%BD%A2%E7%BA%BF%E6%9D%A1">辐射形线条</h4>
+<ul>
+<li>聚焦</li>
+<li>发散</li>
+</ul>
+<blockquote>
+<p>对画面内容引导</p>
+</blockquote>
+<h4 id="%E6%9B%B2%E7%BA%BF">曲线</h4>
+<ul>
+<li>添加画面的灵动柔美</li>
+<li>增加空间感</li>
+</ul>
+<h4 id="%E6%96%9C%E7%BA%BF%E5%AF%B9%E8%A7%92%E7%BA%BF">斜线（对角线）</h4>
+<ul>
+<li>画面动感</li>
+<li>增加画面的空间</li>
+</ul>
+<h4 id="%E4%B8%89%E8%A7%92%E7%BA%BF%E6%9E%84%E5%9B%BE">三角线构图</h4>
+<ul>
+<li>增加画面的稳定感</li>
+<li>增加画面的纵深</li>
+</ul>
+<blockquote>
+<p>是画面稳定性和灵动性很好结合</p>
+</blockquote>
+<h4 id="%E7%8E%AF%E5%BD%A2%E6%9E%84%E5%9B%BEo%E5%BD%A2">环形构图（O形）</h4>
+<ul>
+<li>画面集中和发散</li>
+</ul>
+<h4 id="%E7%BA%BF%E6%9D%A1%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%80%8F%E8%A7%86">线条带来的透视</h4>
+<ul>
+<li>一字形构图形成的纵深与画面的灭点</li>
+</ul>
+<blockquote>
+<p>一般将画面的灭点放在黄金分割点处形成画面直线与曲线的结合</p>
+<blockquote>
+<p><img src="D/../../images/线条2.png" alt="纵深与动感结合"></p>
+</blockquote>
+<p>色调线条直线曲线纵深结合
+<img src="D/../../images/线条1.png" alt="线条构图综合案例"></p>
+</blockquote>
+<h2 id="%E5%BD%B1%E5%83%8F%E7%9A%84%E8%A7%92%E5%BA%A6%E9%80%89%E6%8B%A9">影像的角度选择</h2>
+<h3 id="%E6%99%AF%E5%88%AB%E8%A7%92%E5%BA%A6%E4%B8%AD%E7%9A%84%E8%B7%9D%E7%A6%BB%E5%85%B3%E7%B3%BB">景别（角度中的距离关系）</h3>
+<blockquote>
+<p>景别规范了镜头的内容意义</p>
+</blockquote>
+<h4 id="%E5%A4%A7%E8%BF%9C%E6%99%AF%E4%B8%8E%E8%BF%9C%E6%99%AF%E7%8E%AF%E5%A2%83%E9%95%9C%E5%A4%B4">大远景与远景——环境镜头</h4>
+<ul>
+<li><strong>大远景</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>情绪渲染，营造氛围</li>
+<li>奠定视频的整体基调</li>
+<li>人物高度小于等于画面高度的四分之一</li>
+<li>氛围镜头组</li>
+</ul>
+<blockquote>
+<p>当整个视频的镜头数量不多（时长不多），营造氛围的镜头不用太多.长篇视频的氛围营造需要一组镜头</p>
+<blockquote>
+<p>氛围渲染镜头的模板：大环境到最小环境到点睛之笔（最后也可以回到大环境）</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><strong>远景</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>人物高度占据画面高度一半</li>
+<li>远景可以对画面内容承上启下
+例如画面中全景中有一人一物，那么接下来就分别是人与物的近景</li>
+</ul>
+<blockquote>
+<p><a id="jump1"> 远景镜头组逻辑 </a></p>
+<blockquote>
+<p>为什么镜头有这样的逻辑☞ <a href="#%E6%9C%AA%E6%9D%A5%E6%80%A7">镜头的未来性</a></p>
+</blockquote>
+<p><img src="D/../../images/远景衔接逻辑1.png" alt="远景（人与机器）">
+<img src="D/../../images/2.png" alt="远景（人）">
+<img src="D/../../images/3.png" alt="近景（人特写）">
+<img src="D/../../images/4.png" alt="远景（人与机器）">
+<img src="D/../../images/5.png" alt="近景（机器）">
+<img src="D/../../images/6.png" alt="近景（机器特写）"></p>
+</blockquote>
+</blockquote>
+<ul>
+<li><strong>注意</strong> ：大远景与远景都是结构性的镜头所以在拍摄中应当 <em><strong>严格控制其数量</strong></em>，因为它不是主要的内容阐述方式。但是大远景和远景的形式美感氛围感很充足所以在一些宣传片中占据比较多，但是由于内容不足所以比较依赖旁白解说填充信息空白。</li>
+</ul>
+<h3 id="%E5%A4%A7%E5%85%A8%E6%99%AF%E5%92%8C%E5%85%A8%E6%99%AF%E4%B8%AD%E6%99%AF%E5%85%B3%E7%B3%BB%E9%95%9C%E5%A4%B4">大全景和全景中景——关系镜头</h3>
+<ul>
+<li><strong>大全景</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>大全景已经开始故事叙事</li>
+<li>给了环境更多的表现空间，交代全面的空间关系。</li>
+<li>人占整个画面高度的3/4</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>全景</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>与整个画面高度是1:1的满幅状态</li>
+<li>交代形体关系</li>
+<li>全景并非万能 对于具体的指向性不强（例如人物特点特征）</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>中景</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>画面在人物膝盖之上中景（腰以上为中近景）</li>
+<li>人物关系叙述</li>
+</ul>
+<blockquote>
+<p>关系叙事就是在一个镜头内部来形成人与人之间关系的一个对比，或者是一个关系的扭结，进而能够。形成更为丰富的信息的传达。借助镜头内部的逻辑来表达镜头叙述的客观性。</p>
+</blockquote>
+</blockquote>
+<h3 id="%E8%BF%91%E6%99%AF%E5%92%8C%E7%89%B9%E5%86%99%E7%BB%86%E8%8A%82">近景和特写——细节</h3>
+<ul>
+<li><strong>近景</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>躯干三分之一强，头部三分之一弱</li>
+</ul>
+<blockquote>
+<p>来自对人体比例的审美——黄金分割线</p>
+</blockquote>
+<ul>
+<li>人物神情的捕捉（已经是细节镜头）</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>特写</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>具有明确的目的性</li>
+<li>具有丰富的信息</li>
+<li>国外有一种标准就是让特写占据整部片子的一半</li>
+</ul>
+</blockquote>
+<h3 id="%E8%A7%92%E5%BA%A6%E7%9A%84%E6%96%B9%E5%90%91%E5%85%B3%E7%B3%BB">角度的方向关系</h3>
+<blockquote>
+<p>角度的选择具有很强的</p>
+</blockquote>
+<ul>
+<li><strong>正面</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>利于表现画面的形状感</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/21.png" alt="正面" title="树在正面的伞状表现">
+<img src="D/../../images/22.png" alt="正面" title="建筑的平面形式美感">
+<img src="D/../../images/23.png" alt="正面" title="正面仰拍对头发的表现"></p>
+</blockquote>
+<ul>
+<li>被摄对象与镜头间的直接交流</li>
+<li>不利于表现画面的纵深感或者是立体感
+<em><strong>角度的选择本身是具有很强的内容关联的</strong></em></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>斜侧</strong></li>
+</ul>
+<p><img src="D/../../images/角度定义.png" alt="定义"></p>
+<blockquote>
+<ul>
+<li>90°到180°之间</li>
+<li>画面的纵深感，加强景深</li>
+</ul>
+<blockquote>
+<ul>
+<li>30°斜侧——更强的正面形状</li>
+</ul>
+<p>一般用于采访的（七分脸)方向感和面部主要信息都能体现</p>
+<blockquote>
+<p><img src="D/../../images/26.png" alt="七分侧脸"></p>
+</blockquote>
+<ul>
+<li>60°斜侧——更强的方向性,纵深感</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/24.png" alt="斜侧" title="纵深，对柱子而言的60°"></p>
+</blockquote>
+<ul>
+<li>45°对角斜侧</li>
+</ul>
+<p>利于去拓展整个画面的空间感。</p>
+<blockquote>
+<p><img src="D/../../images/25.png" alt="斜侧" title="纵深，对柱子而言的60°"></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><strong>侧面</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>正侧</li>
+</ul>
+<blockquote>
+<ul>
+<li>利于表现方向感</li>
+<li>对脸部轮廓的勾勒产生了交流感</li>
+<li>常用于剪影/</li>
+</ul>
+<blockquote>
+<p>由于正侧对脸部另一半脸部的完全的遮蔽，导致两个对象<strong>有严重的对峙感</strong>，这使得正侧角度在实际中运用很少
+<img src="D/../../images/28.png" alt="正侧" title="对峙感"></p>
+</blockquote>
+<ul>
+<li>最强烈的速度感</li>
+</ul>
+<blockquote>
+<p>（同时也缺少了运动的<strong>立体姿态感</strong>）
+<img src="D/../../images/29.png" alt="正侧" title="速度感"></p>
+</blockquote>
+</blockquote>
+<ul>
+<li>30°斜侧</li>
+</ul>
+<blockquote>
+<ul>
+<li>速度与运动姿态的共存</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/32.png" alt="30°侧" title="速度感"></p>
+</blockquote>
+</blockquote>
+<ul>
+<li>60°斜侧</li>
+</ul>
+<blockquote>
+<ul>
+<li>与对象的勾连感（方向感）</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/31.png" alt="60°侧" title="连接"></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><strong>背面</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>借实写意（视觉联想带来一些韵味）</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/36.png" alt="七分侧脸"></p>
+</blockquote>
+</blockquote>
+<ul>
+<li><strong>背侧（反侧）</strong></li>
+</ul>
+<blockquote>
+<blockquote>
+<ul>
+<li>牵引作用</li>
+</ul>
+<p><img src="D/../../images/34.png" alt="chongjin"></p>
+<blockquote>
+<p>用于表现对象面对的对象，用于牵引向另一个对象(时常用于摇镜，引导对象入画)</p>
+</blockquote>
+<ul>
+<li>出其不意感
+<img src="D/../../images/35.png" alt="chongjin"></li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="%E9%AB%98%E5%BA%A6%E5%85%B3%E7%B3%BB">高度关系</h3>
+<blockquote>
+<p>机位与被摄对象之间垂直关系</p>
+</blockquote>
+<ul>
+<li>情绪营造</li>
+</ul>
+<blockquote>
+<ul>
+<li>仰视</li>
+</ul>
+<blockquote>
+<p>表达崇敬
+<img src="D/../../images/41.png" alt="chongjin"></p>
+</blockquote>
+<ul>
+<li>平视</li>
+</ul>
+<blockquote>
+<p>自然，客观
+<img src="D/../../images/42.png" alt="chongjin"></p>
+</blockquote>
+<ul>
+<li>俯视</li>
+</ul>
+<blockquote>
+<p>矮化
+<img src="D/../../images/43.png" alt="chongjin"></p>
+</blockquote>
+</blockquote>
+<ul>
+<li>层次搭建</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/44.png" alt="七分侧脸">
+<img src="D/../../images/45.png" alt="七分侧脸"></p>
+</blockquote>
+<ul>
+<li>视觉冲击</li>
+</ul>
+<blockquote></blockquote>
+<h3 id="%E8%A7%92%E5%BA%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD">角度的基本功能</h3>
+<ul>
+<li>原有场景空间的透视关系</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/51.png" alt="透视"></p>
+</blockquote>
+<ul>
+<li>体现人物位置关系及叙事关系的变化</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/52.png" alt="叙事关系" title="表明为船的倾覆是由于巨浪"></p>
+</blockquote>
+<ul>
+<li>有效地表达人物形象</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/53.png" alt="人物形象" title="齐白石胡须的特点"></p>
+</blockquote>
+<ul>
+<li>一种主观的及视觉形式的处理</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/54.png" alt="人物形象" title="摄影师对机器的主观突出"></p>
+</blockquote>
+<ul>
+<li>决定影像视觉形式的风格</li>
+</ul>
+<blockquote>
+<p>画面光线的控制</p>
+<blockquote>
+<p><img src="D/../../images/55.png" alt="人物形象" title="逆光光风格"></p>
+</blockquote>
+</blockquote>
+<h2 id="%E5%BD%B1%E5%83%8F%E7%9A%84%E9%95%9C%E5%A4%B4%E5%BD%A2%E6%80%81">影像的镜头形态</h2>
+<h3 id="%E9%95%9C%E5%A4%B4%E7%9A%84%E6%A6%82%E5%BF%B5">镜头的概念</h3>
+<h4 id="%E5%B1%9E%E6%80%A7">属性</h4>
+<ul>
+<li>过程性</li>
+</ul>
+<blockquote>
+<p>一个镜头必须表达对象的运动过程而不是照片式的状态表达</p>
+</blockquote>
+<ul>
+<li><a id="未来性"> 不可知性（未来性）</a></li>
+</ul>
+<blockquote>
+<p>镜头记录的过程需要保持一定的发展，使得镜头能与下一个镜头有所勾连，而下一个镜头往往是在未来的这就使得镜头需要向未来取材，保持内容具有一定的不可知性，能够进一步开启下一个镜头解开这个镜头无法表达的内容。</p>
+<blockquote>
+<p>参考全景镜头组之间的调度。一个全景的对象往往不具备细节，但是全景对场景整体的视觉表达，内在就给对象由这种场景引起的变化留下了可以继续表达的空间。这就规定了☞<a href="#jump1">全景景镜头组逻辑顺序</a></p>
+</blockquote>
+</blockquote>
+<ul>
+<li>框架</li>
+</ul>
+<blockquote>
+<p>一个镜头一定是在一个框架内的，这就必须进行场面的调度</p>
+<blockquote>
+<p>不管是人员的调度还是镜头的调度保持需要表达的内容始终在框架内</p>
+<blockquote>
+<p>同时对镜头还是对象的调动有着不同的作用具体参考固定镜头与运动镜头</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="%E5%9B%BA%E5%AE%9A%E9%95%9C%E5%A4%B4">固定镜头</h3>
+<h4 id="%E5%9B%BA%E5%AE%9A%E9%95%9C%E5%A4%B4%E7%9A%84%E6%A6%82%E5%BF%B5">固定镜头的概念</h4>
+<h5 id="%E4%B8%89%E4%B8%8D%E5%8A%A8%E9%95%9C%E5%A4%B4">三不动镜头</h5>
+<ul>
+<li>机位不动</li>
+</ul>
+<blockquote>
+<p>摆脱了机位移动的可能性</p>
+</blockquote>
+<ul>
+<li>光轴不动</li>
+</ul>
+<blockquote>
+<p>摆脱了摇镜头的形态</p>
+</blockquote>
+<ul>
+<li>焦距不动</li>
+</ul>
+<blockquote>
+<p>摆脱了机位推拉的运动形态</p>
+</blockquote>
+<h5 id="%E7%9B%B8%E5%AF%B9%E9%9D%99%E6%AD%A2">相对静止</h5>
+<blockquote>
+<p>固定镜头与其拍摄的主要内容之间的关系要求相对静止</p>
+<blockquote>
+<p>注意这里是主要内容，而不是对象或者人。人与镜头之间的相对静止也会导致运动镜头例如：<strong>跟镜头</strong>
+相对静止的镜头也是主要对画面内容信息有利的传达</p>
+</blockquote>
+</blockquote>
+<h4 id="%E5%AE%A2%E8%A7%82%E8%A1%A8%E8%BE%BE">客观表达</h4>
+<ul>
+<li>实际上是指的固定镜头在拍摄的时候要尽可能的保持稳定</li>
+</ul>
+<blockquote>
+<p>这种客观表达是相对与晃动镜头而言的，是对画面内容的专注表达没有镜头本身其他的其他影响——例如镜头的晃动会带来镜头本身的信息传达从而造成对原本需要呈现画面内容额外的信息</p>
+</blockquote>
+<h4 id="%E6%9E%84%E5%9B%BE%E7%B2%BE%E7%A1%AE">构图精确</h4>
+<blockquote>
+<p>构图精确的重点在于运用构图语言对内容进行准确的信息传达</p>
+<blockquote>
+<p>这种有效的构图安排涉及镜头的景别，主体在画面中的位置需要完整的镜头语言支撑，才能让构图精准。这种精确需要大量的拉片思考。这次不过多介绍。</p>
+<blockquote>
+<p>参考课中的拉片分析给出构图精准的几个要素</p>
+<ul>
+<li>景别</li>
+<li>主体在画面中的位置</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/61.png" alt="构图" title="中间构图的严肃，或者呆板">
+<img src="D/../../images/62.png" alt="构图" title="黄金构图">
+<img src="D/../../images/63.png" alt="构图" title="女性曲线的黄金分割处,贪恋女色"></p>
+</blockquote>
+<ul>
+<li>镜头数量与出现顺序</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/66.png" alt="构图" title="对话中不同人物的特写数量与特写内容">
+<img src="D/../../images/67.png" alt="构图" title="主角第一个特写">
+<img src="D/../../images/68.png" alt="构图" title="配角特写的表现细节">
+<img src="D/../../images/69.png" alt="构图" title="主角特写，且没有细节"></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="%E5%9B%BA%E5%AE%9A%E9%95%9C%E5%A4%B4%E7%9A%84%E5%85%89%E7%BA%BF%E8%90%A5%E9%80%A0">固定镜头的光线营造</h4>
+<blockquote>
+<p>机位决定光位</p>
+<blockquote>
+<p>机位不定，其实是光位不定的，机位与光源相对就是逆光，相对侧面就是就是测光</p>
+</blockquote>
+</blockquote>
+<h5 id="%E5%85%89%E7%BA%BF%E8%90%A5%E9%80%A0%E7%9A%84%E7%9B%AE%E7%9A%84">光线营造的目的</h5>
+<blockquote>
+<ul>
+<li>隐藏光源不要穿帮</li>
+</ul>
+<blockquote>
+<p>固定镜头更有利于光线的营造，更有利于去进行一个良好的光线的搭置</p>
+</blockquote>
+<ul>
+<li>维护画面的真实感</li>
+</ul>
+<blockquote>
+<p>保证时空的连贯性（包括色调，光源位置）</p>
+<blockquote>
+<p><img src="D/../../images/7.2.png" alt="时空连贯" title="昆虫光线">
+<img src="D/../../images/7.3.png" alt="时空连贯" title="环境光线"></p>
+</blockquote>
+</blockquote>
+<ul>
+<li>
+<p>营造被摄对象的质感</p>
+</li>
+<li>
+<p>营造纵深感</p>
+</li>
+</ul>
+</blockquote>
+<h5 id="%E4%B8%89%E7%82%B9%E5%B8%83%E5%85%89%E6%B3%95">三点布光法</h5>
+<ul>
+<li>主光</li>
+<li>辅光</li>
+<li>轮廓光</li>
+<li>背景光(空间纵深)</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/7.11.png" alt="三点光" title="示意图"></p>
+<blockquote>
+<p><img src="D/../../images/7.1.png" alt="三点光" title="昆虫光线的布光">
+<img src="D/../../images/7.10.png" alt="三点光" title="背景光的纵深"></p>
+</blockquote>
+</blockquote>
+<h4 id="%E5%9B%BA%E5%AE%9A%E9%95%9C%E5%A4%B4%E7%9A%84%E5%8A%A8%E4%BD%9C%E8%BF%9E%E8%B4%AF">固定镜头的动作连贯</h4>
+<blockquote>
+<p>固定镜头的动作连贯是通过分镜头的方式来实现这就是分镜组
+他的镜头的表现力很大程度上并不来源于单个镜头的表述，而来源于镜头与镜头之间的衔接。</p>
+</blockquote>
+<h5 id="%E6%8B%8D%E6%91%84%E8%A6%81%E6%B1%82">拍摄要求</h5>
+<ul>
+<li>必须改变机位角度或景别中的任何两个</li>
+<li>成组拍摄</li>
+</ul>
+<blockquote>
+<p>每拍一个镜头都要去想一想它的上一个镜头是什么，它的下一个镜头是什么，它们为什么可以构成这样一个组</p>
+</blockquote>
+<h5 id="%E5%89%AA%E8%BE%91%E6%B3%95">剪辑法</h5>
+<blockquote>
+<ul>
+<li>1/2剪辑法</li>
+</ul>
+<blockquote>
+<p>特点在于它实际上让动作的持续的时间与原来的动作时间是一致的，没有改变动作的持续时间
+一个动作变成两个之后就变成了两拍，但却改变了动作节奏</p>
+</blockquote>
+<ul>
+<li>2/3剪辑法</li>
+</ul>
+<blockquote>
+<p>第一个动作占整个动作的2/3。第二个动作其实也占整个动作的2/3
+中间重复一秒重复产生强调它改变动作时间，以形成强调的目的</p>
+</blockquote>
+<ul>
+<li>1/3剪辑法</li>
+</ul>
+<blockquote>
+<p>第一个动作我们其实手指举到1/3处，但是第二个动作并不是从这开始，而是从2/3处举过头顶，于是我们会发现1/3减去法，其实中间这个部分是没有的<br>
+节省了动作的时间，那么显然加快了动作的节奏，同时提高了片子单位时间的信息量<br>
+大量的减少了细节表达，从而形成了一种特别干练的动作表达的这样</p>
+</blockquote>
+</blockquote>
+<h4 id="%E6%99%AF%E6%B7%B1%E6%8E%A7%E5%88%B6">景深控制</h4>
+<blockquote>
+<p>画面从前到后的整个空间的运用</p>
+</blockquote>
+<h5 id="%E5%B0%8F%E6%99%AF%E6%B7%B1%E6%8E%A7%E5%88%B6">小景深控制</h5>
+<blockquote>
+<p>小清新风格</p>
+<blockquote>
+<p>在于景深变化带来的焦点转移形成画面内容信息的主次变化</p>
+<blockquote>
+<p><img src="D/../../images/8.1.png" alt="小景深" title="景深变化">
+<img src="D/../../images/8.2.png" alt="小景深" title="景深变化"></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h5 id="%E5%A4%A7%E6%99%AF%E6%B7%B1%E6%8E%A7%E5%88%B6">大景深控制</h5>
+<blockquote>
+<ul>
+<li>特点在于它要形成画面的<strong>前中后的层次变化</strong></li>
+<li>其控制靠的是画面的层次的相互之间关系的有效调配</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/8.3.png" alt="大景深" title="大景深的层次">
+观众其实可以在画面的诸个层次里面自由选择他要关注的重点。因此大景深的景深控制带来了一种更为客观的表达，所以在纪录片里面使用大景深的景深控制会比较多。</p>
+</blockquote>
+</blockquote>
+<h4 id="%E8%8A%82%E5%A5%8F%E6%8E%A7%E5%88%B6">节奏控制</h4>
+<ul>
+<li>剪辑节奏</li>
+</ul>
+<blockquote>
+<p>固定镜头的特点在于它的逻辑并不来自于镜头的内部，而来自于镜头的外部，也就是通过剪辑将镜头组的内容有效的组织在一起，这样才能够形成一个整体</p>
+<blockquote>
+<p>当内容的内部节奏足够张扬的时候，外部节奏不添乱，当内容节奏本身不足的时候，外部节奏要打气，这就形成我们说一个固定镜头的节奏控制，其实来自于内部的内容节奏和外部的剪辑节奏的有效配合，将外部的剪辑节奏与内容节奏有效的进行组织的时候，才能够让整个片子张弛有道松紧适度<br>
+详细参考☞<a href="#%E8%8A%82%E5%A5%8F">节奏把控</a></p>
+</blockquote>
+</blockquote>
+<h4 id="%E5%9B%BA%E5%AE%9A%E9%95%9C%E5%A4%B4%E9%80%82%E7%94%A8%E7%9A%84%E5%86%85%E5%AE%B9">固定镜头适用的内容</h4>
+<p>固定镜头本身是不动的机位，是在一个框架内部表现内容的这就产生了几种镜头本身的特性</p>
+<blockquote>
+<ul>
+<li>驻足详观的视觉体验</li>
+</ul>
+<blockquote>
+<p>对画面内容本身的表现</p>
+<ul>
+<li>有利于画面本身情绪的营造</li>
+</ul>
+<blockquote>
+<p>包括回忆，以及安静的环境</p>
+</blockquote>
+<ul>
+<li>善于表现人物</li>
+<li>动作表现</li>
+</ul>
+<blockquote>
+<p>通过分镜表现动作的各个方面——包括微观的细节，中观的关系以及宏观的环境。
+通过动作组接将不可能的动作变成可能</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="%E5%9B%BA%E5%AE%9A%E9%95%9C%E5%A4%B4%E6%8B%8D%E6%91%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">固定镜头拍摄注意事项</h4>
+<ul>
+<li>表现框架内动态的内容（镜头不变画面变）</li>
+<li>注意画面的纵深（固定镜头本身不能展现丰富的空间层次）</li>
+<li>善于捕捉优美的构图（由于框架固定，要在构图上有更多的构图审美，外部的形式美感）</li>
+<li>考虑镜头内容逻辑组接镜头组</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/9.1.png" alt="镜头组合的逻辑" title="环境和光线变化">
+<img src="D/../../images/9.2.png" alt="镜头组合的逻辑" title="人物脸上光线变化">
+<img src="D/../../images/9.3.png" alt="镜头组合的逻辑" title="扶船要起身">
+<img src="D/../../images/9.4.png" alt="镜头组合的逻辑" title="起身后被浪达到">
+<img src="D/../../images/9.5.png" alt="镜头组合的逻辑" title="物品进水">
+<img src="D/../../images/9.6.png" alt="镜头组合的逻辑" title="视线引导">
+<img src="D/../../images/9.7.png" alt="镜头组合的逻辑" title="出现海岸线"></p>
+</blockquote>
+<h3 id="%E8%BF%90%E5%8A%A8%E9%95%9C%E5%A4%B4">运动镜头</h3>
+<h4 id="%E6%A6%82%E5%BF%B5%E5%88%86%E7%B1%BB">概念分类</h4>
+<p>任何运动镜头的拍摄其实是由三个部分构成的。
+以推镜头为例，作为这个运动镜头的起幅，然后从静态开始慢慢向前推，这就构成了推动的运动效果。当我推到我的镜头的呃落幅的时候，我要再静止一段时间，这个就造成我们镜头的落浮。
+<strong>所以实际上任何运动镜头都包括开始的静止，叫做起幅。</strong></p>
+<blockquote>
+<ul>
+<li><strong>推与拉</strong>
+推还是拉更强调镜头的落。</li>
+</ul>
+<blockquote>
+<p>大范围到小范围,强调细节，小到大强调范围（镜头组）</p>
+<ul>
+<li>变焦推拉，不能够符合人眼的视觉经验</li>
+<li>机位移动推拉，机位推拉更自然</li>
+</ul>
+<blockquote>
+<ul>
+<li>在新闻中经常使用，但是一些明显的细节不需要推，否则会影响客观表达（沉浸式表达）</li>
+<li>拉镜头会进入更多信息，会带来悬念感</li>
+<li>拉镜头一点点拉开会有一种退出感，有一种谢幕感觉，相反推镜头就有一种进入感，一种开始感</li>
+</ul>
+</blockquote>
+</blockquote>
+<ul>
+<li>摇</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p>提供一种浏览的感觉(清明上河图)
+每时每刻都在提供信息，内容次地展开</p>
+</li>
+<li>
+<p>创造一种起幅与落幅之间的视觉逻辑的连接</p>
+</li>
+<li>
+<p><strong>甩</strong>--特殊的摇（快速大范围内的空间与时间转移）</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>移</li>
+</ul>
+<blockquote>
+<p>移镜头本身实际上代表着所有的运动形态的一个整合,要体现各种运动形式的有效的结合，并且<strong>创造镜头的视觉张力和空间表现力</strong>，这才能够体现出一镜头的表现力来。</p>
+<ul>
+<li>
+<p><strong>跟</strong> 主观镜头,沉浸式体验</p>
+</li>
+<li>
+<p><strong>升</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>拉镜头加摇镜头的一个组合<br>
+摇镜头次第展开信息量+从局部来到了整体</p>
+</blockquote>
+<ul>
+<li><strong>降</strong></li>
+</ul>
+<blockquote>
+<p>推镜头和摇镜头的组合
+整体到局部+信息次第减少</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong>tips:</strong> 寻找一个节奏进行运镜练习，编排各种运镜</p>
+<h4 id="%E8%BF%90%E5%8A%A8%E9%95%9C%E5%A4%B4%E7%9A%84%E9%80%A0%E5%9E%8B%E5%8A%9F%E8%83%BD">运动镜头的造型功能</h4>
+<blockquote>
+<ul>
+<li><strong>空间调度</strong></li>
+</ul>
+<blockquote>
+<p>不是为了去表现空间本身，而是要借助对于空间的调度或者对于空间的运用来<em><strong>实现镜头的表现力</strong></em> ，运动镜头本身并不是用来提供信息量的镜头。所以在他除了提供情感之外，他更重要的一个方面在于<em><strong>提供视觉效果</strong></em></p>
+<ul>
+<li>空间的丰富性</li>
+<li>综合运动的运镜效果（丰富的镜头样式）</li>
+<li>有线索的有效贯穿</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>情感表达</strong></li>
+</ul>
+<blockquote>
+<p>相比固定镜头信息表达更加拖沓，但能通过时间的积累形成情绪的积累<br>
+所以每次运用长运动镜头的时候需要塑造某种情绪积累</p>
+</blockquote>
+<ul>
+<li><strong>关系构建</strong></li>
+</ul>
+<blockquote>
+<p>固定镜头的<em>逻辑构建</em>是通过外部剪辑来实现的，所以它的逻辑其实是剪出来的而运动镜头的逻辑是拍出来的<br>
+镜头的运动可以将起伏与落浮的事物进行镜头的有效连接，也就是通过镜头的调度来建立一种关系</p>
+<ul>
+<li>通过线索人物来提供信息量</li>
+</ul>
+<blockquote>
+<p>关系的构建信息量并不在于线索人物本身，而在于与线索人物一同经历的那些信息量。这种关系构建通常使用<strong>跟镜头</strong>。</p>
+<ul>
+<li>跟腚镜头<br>
+跟镜头的重点在于跟出了信息量没有，如果我们的跟镜头本身并没有带来信息量，那么这种跟镜头就失去了意义</li>
+<li>线索/线索人物的更迭<br>
+一个复杂的运动镜头的空间调度和人物关系的构建过程中，会不断的更换我们的线索人物,带来更为丰富的信息量<br>
+☞<a href="https://www.bilibili.com/video/BV1i7411t7rt/?spm_id_from=333.337.search-card.all.click&amp;vd_source=9ae5fb05c771775a6b5923ba1c682cf7">赎罪经典的一个跟的长镜头</a>中整个这个敦刻尔克的这样的一个场景有极其丰富的表现，同时能够去理解这三个线索人物的人物性格特征。</li>
+</ul>
+</blockquote>
+<ul>
+<li>快速塑造人物特征和人物关系</li>
+</ul>
+<blockquote>
+<p>在一个较短的时间内对复杂的人物关系或者是对复杂的人物形象进行一个更为全面的了解。<br>
+包括<strong>人物的特点</strong>，他们的<strong>身份的特征</strong>，以及他们相<strong>互之间的关系</strong>。☞<a href="https://www.bilibili.com/video/BV16t411n7Zu/?spm_id_from=333.337.search-card.all.click&amp;vd_source=9ae5fb05c771775a6b5923ba1c682cf7">《风声》传报文片段</a>中通过报文传递作为线索的一个长跟镜头，在极端时间内交代剧中主要人物的关系他们的特征和工作环境。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="%E5%90%8E%E6%9C%9F%E5%89%AA%E8%BE%91">后期剪辑</h2>
+<h3 id="%E5%89%AA%E8%BE%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B1%82%E7%BA%A7">剪辑的基本层级</h3>
+<blockquote>
+<p><strong>单镜头剪辑</strong><br>
+基本技巧 一个镜头与另外一个镜头衔（这种剪辑的方式与具体是什么内容实际上是没有关系的）</p>
+<ul>
+<li>动静衔接</li>
+</ul>
+<blockquote>
+<ul>
+<li>静接静</li>
+</ul>
+<blockquote>
+<p>固定镜头与固定镜头相接,运动镜头在剪辑点在前一镜头的落幅之后后个镜头的起幅之前</p>
+</blockquote>
+<ul>
+<li>动接动</li>
+</ul>
+<blockquote>
+<p>就是剪辑点在起一个运动镜头的起幅之后后一个运动镜头的落幅之前</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>景别衔接<br>
+上下镜头间一定要有景别变化。</li>
+</ul>
+<blockquote>
+<ul>
+<li>相隔景别相接</li>
+</ul>
+<blockquote>
+<p>同景别相接是会跳,相隔景别相接其实在规范我们使用镜头的一些基本的要求。</p>
+</blockquote>
+<ul>
+<li>相邻景别相接</li>
+</ul>
+<blockquote>
+<p>需要三个以上的镜头构成镜头组才能衔接,(蒙太奇句子) 形成明显的逐步式节奏包括后退式、前进式</p>
+<ul>
+<li>后退式<br>
+例如特写、近景、中景接全景的效果</li>
+</ul>
+<blockquote>
+<p>会形成一种次第退出的效果，我们称之为后退式的蒙太奇句子。这种节奏明显的后退句型使得我们能够产生与被摄主体之间的远离感</p>
+</blockquote>
+<ul>
+<li>前进式<br>
+全景\中景\近景</li>
+</ul>
+<blockquote>
+<p>会形成一种次第进入的效果。这种节奏明显的句子使得我们能够产生与被摄主体之间的接近，突出主体的具体细节产生强调或惊讶的效果</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li>成组衔接<br>
+考虑镜头成组的基本要求</li>
+</ul>
+<blockquote>
+<p>全面的去表现一个事物，往往需要把整个事物的镜头分成三类，也就是我们要把这个事物的镜头分为</p>
+<ul>
+<li><strong>环境镜头</strong></li>
+<li><strong>关系镜头</strong></li>
+<li><strong>细节镜头</strong>
+来进行有效的组织</li>
+</ul>
+<blockquote>
+<p>我们来进行镜头的拍摄的时候，往往强调的就是镜头要一组一组的拍，而不是一个一个的拍，因为任何单个镜头都不能够单独的完成一个叙事的任务，或者是一个信息表达的任务，它需要和其他镜头有效的组合在一起，才能够形成一个完整的信息的传达。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="%E8%92%99%E5%A4%AA%E5%A5%87">蒙太奇</h3>
+<h4 id="%E5%BE%AE%E8%A7%82%E8%92%99%E5%A4%AA%E5%A5%87%E9%95%9C%E5%A4%B4%E8%A1%94%E6%8E%A5">微观蒙太奇（镜头衔接）</h4>
+<blockquote>
+<p>微观蒙太奇控制的是镜头与镜头之间衔接的关系</p>
+</blockquote>
+<ul>
+<li>动作剪辑点</li>
+</ul>
+<blockquote>
+<ul>
+<li>动作的开始</li>
+<li>动作的结束</li>
+<li>动作的出现或动作的消失</li>
+</ul>
+<blockquote>
+<p>出画入画</p>
+</blockquote>
+<ul>
+<li>动作的中间的停顿点或者是转折点</li>
+</ul>
+</blockquote>
+<ul>
+<li>情绪剪辑点</li>
+</ul>
+<blockquote>
+<p>会出现一个大面积的留白，留白的目的就是为了让情绪有一个宣泄的空间。</p>
+</blockquote>
+<ul>
+<li>节奏剪辑点</li>
+</ul>
+<blockquote>
+<p>节奏的重点并不是有规律性而是产生变化</p>
+<blockquote>
+<blockquote>
+<p>这种节奏在一些广告宣传片中比较多参考解说片段☞<a href="https://www.bilibili.com/video/BV1BT4y1r7eu/?spm_id_from=333.999.0.0&amp;vd_source=9ae5fb05c771775a6b5923ba1c682cf7">剪辑的节奏</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="%E4%B8%AD%E8%A7%82%E8%92%99%E5%A4%AA%E5%A5%87%E6%AE%B5%E8%90%BD%E8%A1%94%E6%8E%A5">中观蒙太奇（段落衔接）</h4>
+<blockquote>
+<p>段落与段落之间衔接的关系</p>
+</blockquote>
+<h5 id="%E7%89%B9%E6%95%88%E8%BD%AC%E5%9C%BA">特效转场</h5>
+<blockquote>
+<p>黑场专场</p>
+</blockquote>
+<h5 id="%E9%9D%9E%E7%89%B9%E6%95%88%E8%BD%AC%E5%9C%BA%E6%97%A0%E6%8A%80%E5%B7%A7%E8%BD%AC%E5%9C%BA">非特效转场（无技巧转场）</h5>
+<blockquote>
+<p>完全是通过镜头的拍摄构成了一种镜头的逻辑，进而完成场景与场景、事件与事件之间的转换。
+无技巧转场的一个基本特征，就是无技巧转场的重点在于让观众忘记转场因素，不要发现转场的痕迹，<strong>勾连场景之间的关系和内容</strong></p>
+</blockquote>
+<ul>
+<li>出画入画转场</li>
+</ul>
+<blockquote>
+<p>通过主人公走进画面或走出画面来形成场景与场景之间的有效转换</p>
+</blockquote>
+<ul>
+<li>两极镜头转场</li>
+</ul>
+<blockquote>
+<ul>
+<li>特写转场</li>
+<li>空镜转场</li>
+</ul>
+<blockquote>
+<p>大多数的空镜都可以提供空镜转场逻辑的结构性镜头</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>遮挡转场(挡黑转场)</li>
+<li>相似体转场</li>
+</ul>
+<blockquote>
+<p>利用上一个镜头与下一个镜头在某些动作或者是细节上的相似性来完成向下之间的转转接关系</p>
+</blockquote>
+<ul>
+<li>承接转场</li>
+</ul>
+<blockquote>
+<p>上一个镜头的动作或者是内容。构成了下一个动作或内容的一个结果的理由</p>
+</blockquote>
+<ul>
+<li>声音转场</li>
+</ul>
+<h4 id="%E5%AE%8F%E8%A7%82%E8%92%99%E5%A4%AA%E5%A5%87%E5%8F%99%E4%BA%8B%E7%BA%BF%E7%B4%A2">宏观蒙太奇（叙事线索）</h4>
+<blockquote>
+<p>解决的是整个片子的谋篇布局。称宏观蒙太奇也为结构蒙太奇，因为它是服务于结构需要的蒙太奇策略。</p>
+</blockquote>
+<h5 id="%E5%8F%99%E4%BA%8B%E8%92%99%E5%A4%AA%E5%A5%87%E5%9F%BA%E7%A1%80">叙事蒙太奇（基础）</h5>
+<ul>
+<li>平行蒙太奇</li>
+</ul>
+<blockquote>
+<p>讲完a这个人物之后，就开始讲B这种并列结构，其实就构成了我们所说的并列蒙太奇，也是平行蒙太奇。</p>
+<blockquote>
+<p>进行结构安排的时候，为了使结构变得丰富起来，通常我们的片子里面不止一个人物。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>交叉蒙太奇</li>
+</ul>
+<blockquote>
+<p>交叉蒙太奇同样需要有两条线索，但是这两条线索在片子的具体呈现上是要有交叉的，在某时某刻形成两条线索之间的结合</p>
+</blockquote>
+<ul>
+<li>复现式蒙太奇</li>
+</ul>
+<blockquote>
+<p>不是现实中的两条线索的穿插，而是现实与历史的穿插。也构成了一个叙事的结构安排</p>
+</blockquote>
+<ul>
+<li>叫板式蒙太奇</li>
+</ul>
+<blockquote>
+<p>叫板的意思就是形成了内容的呼应,形成了两个时空之间的一种有效的跳接，丰富了我们整个的叙事的内容。</p>
+</blockquote>
+<h5 id="%E8%A1%A8%E6%84%8F%E8%92%99%E5%A4%AA%E5%A5%87%E6%8F%90%E5%8D%87%E6%83%85%E7%BB%AA">表意蒙太奇（提升，情绪）</h5>
+<ul>
+<li>隐喻蒙太奇，也称之为象征蒙太奇</li>
+</ul>
+<blockquote>
+<p>借此物来比喻彼物，从而形成一种意义上的勾连，或者是一种意义上的外延，进而形成我的一种观点表达。</p>
+<blockquote>
+<p>小孩子朝气蓬勃的样子，然后我就拍的是一些绿草茵茵中的花朵，其实我就是想要通过这两个镜头的衔接来表现这个孩子像花儿一样。并不是真的想要表现花和孩子的信息，而是花和孩子之间的一种观点上的勾连。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>对比蒙太奇</li>
+</ul>
+<blockquote>
+<p>比方说杜甫的名句朱门酒肉臭，鹿有冻死骨，其实也就是将两个场景有效的并列在一起，形成他的观点对于当时腐败社会的有力的抨击。</p>
+</blockquote>
+<ul>
+<li>积累蒙太奇</li>
+</ul>
+<blockquote>
+<p>积累蒙太奇就是对于一个细节的反复出现，强调观众对于这一细节所产生的意义的一种理解。通过对细节的反复的这样的一种组织来形成一种情绪。
+这种情绪积累的经典判断☞<a href="https://www.bilibili.com/video/BV1fy4y1m7vg/?spm_id_from=333.337.search-card.all.click&amp;vd_source=9ae5fb05c771775a6b5923ba1c682cf7">无间道天台举枪场景</a></p>
+</blockquote>
+<ul>
+<li>心理蒙太奇（心理活动表现）</li>
+</ul>
+<blockquote>
+<p>在以往的内容中，我们想要形成这种心理表达的时候,用旁白来直接倾诉这个人物的内心。但是当心里蒙太奇出现的时候，我们其实可以借助画面来表现这个人物的内心。</p>
+<blockquote>
+<p>爱情公寓中的☞<a href="https://www.bilibili.com/video/BV1Q34y1s7G3/?spm_id_from=333.337.search-card.all.click">心理独白</a></p>
+</blockquote>
+</blockquote>
+<h3 id="%E5%9C%BA%E6%99%AF">场景</h3>
+<blockquote>
+<p>有限的场景，无限的可能</p>
+<blockquote>
+<p>场景最初其实都是在我们导演和摄影的脑海中出现的，它是创作者对某个内容发生时空的想象，可以是具显，也可以是抽象，但一定是属于人们的想象。
+场景的塑造让我们脱离了现实时空的限制，进入了一个想象的、高度自由的影视时空中。我们通过我们的电影，一个个有限的场景，可以上天入地，无所不能，穿越古今，在这样的时空上建构的故事，才会趣味无限，才会回味无穷。</p>
+</blockquote>
+</blockquote>
+<h4 id="%E5%9C%BA%E6%99%AF%E7%9A%84%E5%88%86%E7%B1%BB">场景的分类</h4>
+<ul>
+<li>内景</li>
+</ul>
+<blockquote>
+<p>利：利是在于不受外面自然光的控制，用的是人工光，无论外面是刮风下雨，光线如何变化不受影响，可以随时随地的拍摄。<br>
+弊：空间有限，不能大幅度的左右移动，镜头也不能大幅度的左右移动。</p>
+</blockquote>
+<ul>
+<li>外景</li>
+</ul>
+<blockquote>
+<p>利：会看到很自然的一些人工景物或者是自然景物
+弊：受天气影响太大</p>
+</blockquote>
+<ul>
+<li>实景（包括内外景）</li>
+</ul>
+<blockquote>
+<p>利：可以按照人的生活活动的真实状态来进行设计
+弊：受光线影响比较大，</p>
+<blockquote>
+<p>而且在我们进行实景拍摄之前，一定要根据我们的电影的需求进行场景的设计，对于实景进行简单的一种改动</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>特技景</li>
+</ul>
+<blockquote>
+<p>美工部门进行的合理的创作设计，道具使用</p>
+<blockquote>
+<p>主体的事之间会产生一些啊夸张的变形效果，我们利用这种透视，利用这种夸张变形去营造一些视觉上的误差。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>计算机模拟（特效）</li>
+</ul>
+<blockquote>
+<p>计算机模拟技术来进行的一种合成的场景。</p>
+</blockquote>
+<h4 id="%E5%9C%BA%E6%99%AF%E7%9A%84%E9%80%89%E6%8B%A9">场景的选择</h4>
+<ul>
+<li>时空</li>
+</ul>
+<blockquote>
+<p>时间（白天晚上）空间（场地，位置）</p>
+<blockquote>
+<p>对于场景的一个大体描述，也是我们在进行开始场景建构设计的时候一个要准确定义的地方。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>综合考虑因素</li>
+</ul>
+<blockquote>
+<p>这地方是一个综合的艺术，不仅是一个单单场景。<br>
+例如</p>
+<blockquote>
+<ul>
+<li>比如说我们要设计构成什么呢？</li>
+<li>主体在哪里？陪体在哪里？群体在哪里？单人还是大众。</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/10.1.png" alt="场景综合因素" title="主体陪体"></p>
+</blockquote>
+<ul>
+<li>什么样的景别,什么样的构图,角度,色彩,光线,形态 ......</li>
+</ul>
+<blockquote>
+<p><img src="D/../../images/10.2.png" alt="场景综合因素" title="光线,景别,什么样的构图"><br>
+<img src="D/../../images/10.3.png" alt="场景综合因素" title="光线,景别,什么样的构图"><br>
+<img src="D/../../images/10.4.png" alt="场景综合因素" title="色调，拍摄角度"><br>
+<img src="D/../../images/10.5.png" alt="场景综合因素" title="构图">
+需要我们综合对整个画面的信息进行分析</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="%E5%9C%BA%E9%9D%A2%E8%B0%83%E5%BA%A6">场面调度</h4>
+<blockquote>
+<p>通过场景的调度对巧妙的叙述人物关系变化</p>
+<blockquote>
+<p>拿王家卫的花样年华做一个对比，我们可以先看看一段影片，我们在这个影片中看到这是两人在吃饭的一个场景，非常简单，镜头的设计大家都能数出来到底有几个，为了知道各自配偶周太太和陈先生是怎么开始的，双方引起了对方的配偶。</p>
+</blockquote>
+</blockquote>
+<p><img src="D/../../images/10.6.png" alt="场景调度" title="俯拍，但是男主人公没有出现，强调了女人物的衣服和突然的一句问话"><br>
+<img src="D/../../images/10.7.png" alt="场景调度" title="反打男主人，对女主人公说话"><br>
+<img src="D/../../images/10.8.png" alt="场景调度" title="正侧的对峙感突出"><br>
+<img src="D/../../images/10.9.png" alt="场景调度" title="镜头在两个人之间，在两个盘子之间啊，不停的游走，当然游走的速度是非常慢的，台词也很少，镜头的剪辑率也很低"><br>
+<img src="D/../../images/10.10.png" alt="场景调度" title="场景一样但是通过主体衣服切换表明场景时间的切换"><br>
+<img src="D/../../images/10.11.png" alt="场景调度" title="下一个场景，他们突然之间换到另一个场景身上，两人坐在了计程车里"></p>
+<h4 id="%E5%9C%BA%E6%99%AF%E5%AF%B9%E5%BD%B1%E7%89%87%E7%9A%84%E5%BD%B1%E5%93%8D">场景对影片的影响</h4>
+<ul>
+<li>场景怎么去决定一个影片的风格</li>
+</ul>
+<blockquote>
+<p>外景是怎么利于对于这个影片的一种气氛的营造，而内景是怎么对于这个影片一种光线的运用？</p>
+<blockquote>
+<p><img src="D/../../images/10.12.png" alt="场景对影片风格影响" title="艺妓回忆录外景氛围营造"><br>
+<img src="D/../../images/10.13.png" alt="场景对影片风格影响" title="艺妓回忆录内景是怎么对于这个影片一种光线的运用"></p>
+</blockquote>
+</blockquote>
+<ul>
+<li>场景对人物的塑造</li>
+</ul>
+<p><img src="D/../../images/10.14.png" alt="场景对影片的影响" title="外景塑造真实感"><br>
+<img src="D/../../images/10.15.png" alt="场景对影片的影响" title="外景塑造真实感"><br>
+<img src="D/../../images/10.16.png" alt="场景对影片的影响" title="内景形象的造型塑造"></p>
+<ul>
+<li>影片整个<strong>场信息</strong>的一种基础的塑造</li>
+</ul>
+<blockquote>
+<p>场信息我们经常会说是一个电影中最短的一个概念，其实我们一个个场景是构成这个场信息的一个个细胞，没有这些场景就没有这些场信息的完整性，它们之间是一环扣一环，层层累加的金字塔结构。</p>
+<p>一场戏要在一个场景中完成，也可能在很多场景中进行完成，我们脑海中要有这根弦，在前期设计的时候我们就知道了，后期我们大概需要哪些场景，保证他们连在一起，没有技术问题。</p>
+</blockquote>
+<ul>
+<li>决定了对于时空的一种呈现</li>
+</ul>
+<blockquote>
+<ul>
+<li>场景与时空的区别</li>
+</ul>
+<blockquote>
+<p>影片的时空是一个很大的概念，而影片的场景是一个很小的概念，这种大与小之间其实是有关联的。比如说电影中外景的出现，无论场次的多与少，长与短，都在影片中形成了一种<strong>整体的空间规模</strong>。我们感觉我们的效果到底是什么，其实都是由这些<strong>场景的长短所决定</strong>的。</p>
+<ul>
+<li>场景设计也是具体的，是<strong>具象的</strong>，是实际拍摄产生的，我们每一个设计都呈现在那地方，非常的具象。</li>
+<li>时空其实你是看不见摸不着的，是<strong>存在于我们脑海中</strong>的，是由我们创作者建立的，跟我们的观众者之间<strong>共同达成的一种啊空间效果。</strong></li>
+</ul>
+<blockquote>
+<p>所以时空是一个宽泛的心理的感触性的概念，他是由许多具体场景的综合起来的一个直觉的感受类似一种氛围感,让一个故事有了一个基调</p>
+<ul>
+<li>案例</li>
+</ul>
+<p><img src="D/../../images/10.17.png" alt="场景对影片的影响" title="希区柯克的《后窗》时空塑造"></p>
+<blockquote>
+<p>采用一种解决问题但是全封闭的一种空间设计。核心是悬念但是带有窥视感。</p>
+</blockquote>
+<p><img src="D/../../images/10.18.png" alt="场景对影片的影响" title="安东尼奥尼的《放大》时空塑造"></p>
+<blockquote>
+<p>一种开放的空间叙事，有一种探索性的现实主义题材。是关于真实的人与事存在的一种思考，是对于这个事件的一种想象。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>我们通过这两个片子可以看到，<strong>封闭和开放的空间形态</strong>是各有优势的。前者紧张刺激。非常的激烈，引人入胜。后者真实含蓄，发人深省。虽然采用了不同场景的设计和定位，但是两种观念均能创作出比较优秀的摄影作品</p>
+</blockquote>
+<h3 id="%E7%A9%BA%E9%95%9C">空镜</h3>
+<p>书上说</p>
+<h4 id="%E7%A9%BA%E9%95%9C%E5%88%86%E7%B1%BB">空镜分类</h4>
+<p>视角</p>
+<ul>
+<li>主观空镜头</li>
+</ul>
+<blockquote>
+<p>多用在恐怖片</p>
+</blockquote>
+<ul>
+<li>客观空镜头</li>
+</ul>
+<p>内容</p>
+<h3 id="%E6%97%B6%E9%97%B4%E7%BA%BF">时间线</h3>
+<h3 id="a-id%22%E8%8A%82%E5%A5%8F%22-%E8%8A%82%E5%A5%8F%E6%8A%8A%E6%8E%A7-a"><a id="节奏"> 节奏把控 </a></h3>
+
+</body>
+</html>
