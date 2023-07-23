@@ -1,6 +1,6 @@
 import docx
 import pypandoc
-
+# 注意改脚本仅支持后缀为.docx的文件若原来的文件为.doc请在word中另存为.docx文件
 def get_heading_level(paragraph):
     # 获取段落的样式名
     style_name = paragraph.style.name
@@ -40,7 +40,7 @@ def convert_docx_to_md(input_file, output_file):
         f.write(markdown_content)
 
 if __name__ == '__main__':
-    input_file_path = 'D:/考研/现西背诵.docx'
-    output_file_path = 'D:/考研/现西背诵.md'
+    input_file_path = 'D:/考研/西哲史背诵-赵敦华_.doc'
+    output_file_path = 'D:/考研/西哲史背诵.md'
     convert_docx_to_md(input_file_path, output_file_path)
 
